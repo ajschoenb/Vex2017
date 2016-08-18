@@ -1,0 +1,62 @@
+<DOCTYPE! html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body class="container">
+  <header>
+    <% include ../partials/header.ejs %>
+  </header>
+
+  <main style="padding-top:60px;">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h2>
+          <center>
+            <%= team_number %> - <%= team_name %>
+            <br />
+            <div class="btn-group" role="group" aria-label="...">
+              <a href="/team/<%= previous_team %>" type="button" class="btn btn-default">Previous</a>
+              <a href="/team/<%= next_team %>" type="button" class="btn btn-default">Next</a>
+            </div>
+          </center>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <h3 style="margin-top:0;"><center>Avg. Score: <%= avg_auto_score %> / <%= avg_contrib_score %></center></h3>
+      <div class="col-lg-6">
+        <h3><u>Autonomous Data</u></h3>
+        <table class="table">
+          <tr>
+            <td><h4 style="margin-top:0;">Stars: <%= auto_star_near %> / <%= auto_star_far %> / <%= auto_star_miss %></h4></td>
+            <td style="text-align:right; padding-right:50px;"><h4 style="margin-top:0;">Cubes: <%= auto_cube_near %> / <%= auto_cube_far %> / <%= auto_cube_miss %></h4></td>
+          </tr>
+          <tr>
+            <td><h4 style="margin-top:0;">No Auto: <%= no_autos %></h4></td>
+            <td style="text-align:right; padding-right:50px;"><h4 style="margin-top:0;">Hang: <%= auto_low_hang %> / <%= auto_high_hang %> / <%= auto_hang_fail %></h4></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-lg-6">
+        <h3><u>Teleop Data</u></h3>
+        <table class="table">
+          <tr>
+            <td><h4 style="margin-top:0;">Stars: <%= tele_star_near %> / <%= tele_star_far %> / <%= tele_star_miss %></h4></td>
+            <td style="text-align:right; padding-right:50px;"><h4 style="margin-top:0;">Cubes: <%= tele_cube_near %> / <%= tele_cube_far %> / <%= tele_cube_miss %></h4></td>
+          </tr>
+          <tr>
+            <td><h4 style="margin-top:0;">Driver Rating: <%= avg_driver_rating %></h4></td>
+            <td style="text-align:right; padding-right:50px;"><h4 style="margin-top:0;">Hang: <%= auto_low_hang %> / <%= auto_high_hang %> / <%= auto_hang_fail %></h4></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

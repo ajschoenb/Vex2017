@@ -1,0 +1,180 @@
+<DOCTYPE! html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body class="container">
+  <header>
+    <% include ../partials/header.ejs %>
+  </header>
+
+  <main style="padding-top:60px;">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <%- message %>
+        <form id="data_entry" method="post" action="/parse-data">
+          <div class="form-group" style="padding-top:15px;">
+            <h3><strong><center>Miscellaneous</center></strong></h3>
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Match Number</label>
+                  <input tabindex="1" type="text" class="form-control" name="match_num" required />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Team Number</label>
+                  <input tabindex="2" type="text" class="form-control" name="team_num" required />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Driver Rating</label>
+                  <input tabindex="3" type="text" class="form-control" name="driver_rating" required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <h3><strong><center>Tele-OP</center></strong></h3>
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Star Near</label>
+                  <input tabindex="3" type="text" class="form-control" name="tele_star_near" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Star Far</label>
+                  <input tabindex="4" type="text" class="form-control" name="tele_star_far" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Star Miss</label>
+                  <input tabindex="4" type="text" class="form-control" name="tele_star_miss" />
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-top:15px;">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Cube Near</label>
+                  <input tabindex="5" type="text" class="form-control" name="tele_cube_near" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Cube Far</label>
+                  <input tabindex="6" type="text" class="form-control" name="tele_cube_far" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Cube Miss</label>
+                  <input tabindex="7" type="text" class="form-control" name="tele_cube_miss" />
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-top:15px;">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Low Hang</label>
+                  <input tabindex="8" type="text" class="form-control" name="tele_low_hang" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">High Hang</label>
+                  <input tabindex="9" type="text" class="form-control" name="tele_high_hang" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Hang Fail</label>
+                  <input tabindex="10" type="text" class="form-control" name="tele_hang_fail" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <h3><strong><center>Auton</center></strong></h3>
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Star Near</label>
+                  <input tabindex="11" type="text" class="form-control" name="auto_star_near" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Star Far</label>
+                  <input tabindex="12" type="text" class="form-control" name="auto_star_far" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Star Miss</label>
+                  <input tabindex="13" type="text" class="form-control" name="auto_star_miss" />
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-top:15px;">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Cube Near</label>
+                  <input tabindex="14" type="text" class="form-control" name="auto_cube_near" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Cube Far</label>
+                  <input tabindex="15" type="text" class="form-control" name="auto_cube_far" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Cube Miss</label>
+                  <input tabindex="16" type="text" class="form-control" name="auto_cube_miss" />
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-top:15px;">
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Low Hang</label>
+                  <input tabindex="17" type="text" class="form-control" name="auto_low_hang" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto High Hang</label>
+                  <input tabindex="18" type="text" class="form-control" name="auto_high_hang" />
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="input-group-sm">
+                  <label class="control-label">Auto Hang Fail</label>
+                  <input tabindex="19" type="text" class="form-control" name="auto_hang_fail" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input tabindex="20" style="float:right;" type="submit" class="btn btn-success" value="Submit Data" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
