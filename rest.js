@@ -43,27 +43,27 @@ rest_router.prototype.handleRoutes = function(router, connection) {
     });
   });
   router.post("/parse-data", function(req, res) {
-    var match_num = req.body.match_num;
-    var team_num = req.body.team_num;
-    var driver_rating = req.body.driver_rating;
-    var tele_star_near = req.body.tele_star_near;
-    var tele_star_far = req.body.tele_star_far;
-    var tele_star_miss = req.body.tele_star_miss;
-    var tele_cube_near = req.body.tele_cube_near;
-    var tele_cube_far = req.body.tele_cube_far;
-    var tele_cube_miss = req.body.tele_cube_miss;
-    var tele_low_hang = req.body.tele_low_hang;
-    var tele_high_hang = req.body.tele_high_hang;
-    var tele_hang_fail = req.body.tele_hang_fail;
-    var auto_star_near = req.body.auto_star_near;
-    var auto_star_far = req.body.auto_star_far;
-    var auto_star_miss = req.body.auto_star_miss;
-    var auto_cube_near = req.body.auto_cube_near;
-    var auto_cube_far = req.body.auto_cube_far;
-    var auto_cube_miss = req.body.auto_cube_miss;
-    var auto_low_hang = req.body.auto_low_hang;
-    var auto_high_hang = req.body.auto_high_hang;
-    var auto_hang_fail = req.body.auto_hang_fail;
+    var match_num = req.body.match_num || 0;
+    var team_num = req.body.team_num || 0;
+    var driver_rating = req.body.driver_rating || 0;
+    var tele_star_near = req.body.tele_star_near || 0;
+    var tele_star_far = req.body.tele_star_far || 0;
+    var tele_star_miss = req.body.tele_star_miss || 0;
+    var tele_cube_near = req.body.tele_cube_near || 0;
+    var tele_cube_far = req.body.tele_cube_far || 0;
+    var tele_cube_miss = req.body.tele_cube_miss || 0;
+    var tele_low_hang = req.body.tele_low_hang || 0;
+    var tele_high_hang = req.body.tele_high_hang || 0;
+    var tele_hang_fail = req.body.tele_hang_fail || 0;
+    var auto_star_near = req.body.auto_star_near || 0;
+    var auto_star_far = req.body.auto_star_far || 0;
+    var auto_star_miss = req.body.auto_star_miss || 0;
+    var auto_cube_near = req.body.auto_cube_near || 0;
+    var auto_cube_far = req.body.auto_cube_far || 0;
+    var auto_cube_miss = req.body.auto_cube_miss || 0;
+    var auto_low_hang = req.body.auto_low_hang || 0;
+    var auto_high_hang = req.body.auto_high_hang || 0;
+    var auto_hang_fail = req.body.auto_hang_fail || 0;
     var auto_score = 1 * auto_star_near + 2 * auto_star_far + 2 * auto_cube_near + 4 * auto_cube_far + 4 * auto_low_hang + 12 * auto_high_hang;
     var contrib_score = auto_score + 1 * tele_star_near + 2 * tele_star_far + 2 * tele_cube_near + 4 * tele_cube_far + 4 * tele_low_hang + 12 * tele_high_hang;
     var insert_sql = "INSERT INTO matches (match_num, team_num, tele_star_near, tele_star_far, tele_star_miss, tele_cube_near, tele_cube_far, tele_cube_miss, " +
@@ -78,6 +78,7 @@ rest_router.prototype.handleRoutes = function(router, connection) {
         updateTeams(team_num);
       }
       else {
+        console.log(err);
         most_recent = -1;
       }
       res.redirect("/data-entry");
